@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+.streamlit/secrets.toml
+runtime/
+chroma_data/
+eval_results/*.csv
+eval_results/*.json

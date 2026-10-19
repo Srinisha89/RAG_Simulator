@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rag-immigration-policy-simulator"
+version = "0.1.0"
+description = "A synthetic-data portfolio demo for a policy-grounded assistant."
+requires-python = ">=3.11"
+dependencies = ["streamlit>=1.40,<2"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+retrieval = ["chromadb>=0.5,<2", "sentence-transformers>=3,<6"]
+model = ["anthropic>=0.49,<1", "python-dotenv>=1,<2"]
+all = ["rag-immigration-policy-simulator[test,retrieval,model]"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
